@@ -8,5 +8,19 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  render: h => h(App)
+  render: h => h(App),
+  // test $root
+  data: {
+    foo: 1
+  },
+  computed: {
+    bar() {
+      return this.foo
+    }
+  },
+  methods: {
+    baz() {
+      return this.foo + 1
+    }
+  }
 })
