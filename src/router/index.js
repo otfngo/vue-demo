@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import SlotScope from '@/components/SlotScope'
 import AccessRoot from '@/components/AccessRoot'
+import Transition from '@/components/Transition'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/access-root',
       name: 'AccessRoot',
       component: AccessRoot
+    },
+    {
+      path: '/transition',
+      name: 'Transition',
+      component: Transition
     }
   ]
 })
