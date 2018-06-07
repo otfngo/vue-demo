@@ -4,8 +4,8 @@ import AccessRoot from '@/components/AccessRoot'
 import Directive from '@/components/Directive'
 import HelloWorld from '@/components/HelloWorld'
 import SlotScope from '@/components/SlotScope'
-import XTouch from '@/components/Touch'
 import Transition from '@/components/Transition'
+import VTouch from '@/components/VTouch'
 
 Vue.use(Router)
 
@@ -33,14 +33,14 @@ export default new Router({
       component: SlotScope
     },
     {
-      path: '/x-touch',
-      name: 'XTouch',
-      component: XTouch
-    },
-    {
       path: '/transition',
       name: 'Transition',
       component: Transition
+    },
+    {
+      path: '/v-touch',
+      name: 'VTouch',
+      component: VTouch
     }
   ]
 })
