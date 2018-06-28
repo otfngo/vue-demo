@@ -13,7 +13,7 @@
         <span v-if="scope.todo.isComplete">
           {{ scope.todo.text }}
         </span>
-        <span v-if="!scope.todo.isComplete">
+        <span v-else>
           false
         </span>
       </template>

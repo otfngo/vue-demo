@@ -2,10 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AccessRoot from '@/components/AccessRoot'
 import Directive from '@/components/Directive'
-import HelloWorld from '@/components/HelloWorld'
 import SlotScope from '@/components/SlotScope'
 import Transition from '@/components/Transition'
-import VTouch from '@/components/VTouch'
+import demo from '@/components/demo'
+import provider from '@/components/provider'
 
 Vue.use(Router)
 
@@ -14,8 +14,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'index',
+      component: demo
+    },
+    {
+      path: '/demo',
+      name: 'demo',
+      component: demo
     },
     {
       path: '/access-root',
@@ -38,9 +43,9 @@ export default new Router({
       component: Transition
     },
     {
-      path: '/v-touch',
-      name: 'VTouch',
-      component: VTouch
+      path: '/provider',
+      name: 'provider',
+      component: provider
     }
   ]
 })

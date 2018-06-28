@@ -4,9 +4,9 @@
     <div>{{ bar }}</div>
     <div>{{ baz() }}</div>
     <div>
-      <button @click="plus">++</button>
+      <button @click="handlePlusClick">++</button>
       foo
-      <button @click="minus">--</button>
+      <button @click="handleMinusClick">--</button>
     </div>
   </div>
 </template>
@@ -25,10 +25,10 @@ export default {
     baz() {
       return this.$root.baz()
     },
-    plus() {
+    handlePlusClick() {
       this.$root.foo++
     },
-    minus() {
+    handleMinusClick() {
       this.$root.foo--
     }
   }
