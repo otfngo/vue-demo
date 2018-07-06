@@ -1,7 +1,13 @@
 <template>
   <ul>
-    <li v-for="todo in todos" :key="todo.id">
+    <!-- <li v-for="todo in todos" :key="todo.id">
       {{ todo.text }}
+    </li> -->
+
+    <li v-for="todo in todos" :key="todo.id">
+      <slot :todo="todo">
+        {{ todo.text }}
+      </slot>
     </li>
   </ul>
 </template>

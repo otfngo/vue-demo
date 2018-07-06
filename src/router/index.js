@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import AccessRoot from '@/components/AccessRoot'
+import Directive from '@/components/Directive'
 import SlotScope from '@/components/SlotScope'
+import Transition from '@/components/Transition'
+import demo from '@/components/demo'
+import provider from '@/components/provider'
 
 Vue.use(Router)
 
@@ -10,13 +14,38 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'index',
+      component: demo
+    },
+    {
+      path: '/demo',
+      name: 'demo',
+      component: demo
+    },
+    {
+      path: '/access-root',
+      name: 'AccessRoot',
+      component: AccessRoot
+    },
+    {
+      path: '/directive',
+      name: 'Directive',
+      component: Directive
     },
     {
       path: '/slot-scope',
       name: 'SlotScope',
       component: SlotScope
+    },
+    {
+      path: '/transition',
+      name: 'Transition',
+      component: Transition
+    },
+    {
+      path: '/provider',
+      name: 'provider',
+      component: provider
     }
   ]
 })
