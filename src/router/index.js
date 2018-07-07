@@ -9,43 +9,60 @@ import provider from '@/components/provider'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: demo
-    },
-    {
-      path: '/demo',
-      name: 'demo',
-      component: demo
-    },
-    {
-      path: '/access-root',
-      name: 'AccessRoot',
-      component: AccessRoot
-    },
-    {
-      path: '/directive',
-      name: 'Directive',
-      component: Directive
-    },
-    {
-      path: '/slot-scope',
-      name: 'SlotScope',
-      component: SlotScope
-    },
-    {
-      path: '/transition',
-      name: 'Transition',
-      component: Transition
-    },
-    {
-      path: '/provider',
-      name: 'provider',
-      component: provider
+  routes: [{
+    path: '/',
+    name: 'index',
+    component: demo,
+    meta: {
+      requireAuth: true
     }
-  ]
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: demo
+  },
+  {
+    path: '/access-root',
+    name: 'AccessRoot',
+    component: AccessRoot
+  },
+  {
+    path: '/directive',
+    name: 'Directive',
+    component: Directive
+  },
+  {
+    path: '/slot-scope',
+    name: 'SlotScope',
+    component: SlotScope
+  },
+  {
+    path: '/transition',
+    name: 'Transition',
+    component: Transition
+  },
+  {
+    path: '/provider',
+    name: 'provider',
+    component: provider
+  }]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireAuth)) {
+    // next({
+    //   path: '/slot-scope',
+    //   query: {
+    //     redirect: to.fullPath
+    //   }
+    // })
+    next()
+  } else {
+    next()
+  }
+})
+
+export default router
