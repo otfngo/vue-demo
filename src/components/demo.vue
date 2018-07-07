@@ -23,6 +23,9 @@ export default {
       return this.message.split('').reverse().join('')
     }
   },
+  beforeRouteEnter (to, from, next) {
+    // ...
+  },
   methods: {
     test() {
       return this.foo + 1
