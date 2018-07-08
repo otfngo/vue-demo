@@ -42,9 +42,6 @@ export default {
       next(false)
     }
   },
-  beforeRouteEnter (to, from, next) {
-    // ...
-  },
   methods: {
     test() {
       return this.foo + 1
