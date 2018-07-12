@@ -8,6 +8,7 @@
     <button @click="handleMinusClick">--</button>
     <button @click="handleClick">click</button>
     <button @click="goToAnotherPage">go to another page</button>
+    <button @click="handleTransitionClick">transition page</button>
   </div>
 </template>
 
@@ -28,7 +29,6 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next) {
-    debugger
     next()
   },
   beforeRouteUpdate(to, from, next) {
@@ -65,6 +65,9 @@ export default {
     },
     goToAnotherPage() {
       this.$router.push('/slot-scope')
+    },
+    handleTransitionClick() {
+      this.$router.push('/transition')
     }
   }
 }

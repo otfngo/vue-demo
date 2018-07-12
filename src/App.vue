@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <transition :name="transitionName">
+    <!-- <transition :name="transitionName">
       <router-view/>
-    </transition>
+    </transition> -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -15,12 +16,11 @@ export default {
     }
   },
   watch: {
-    '$route'(to, from) {
-      debugger
-      const toDepth = to.path.split('/').length
-      const fromDepth = from.path.split('/').length
-      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-    }
+    // '$route'(to, from) {
+    //   const toDepth = to.path.split('/').length
+    //   const fromDepth = from.path.split('/').length
+    //   this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+    // }
   }
 }
 </script>

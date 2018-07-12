@@ -3,9 +3,11 @@ import Router from 'vue-router'
 import AccessRoot from '@/components/AccessRoot'
 import Directive from '@/components/Directive'
 import SlotScope from '@/components/SlotScope'
-import Transition from '@/components/Transition'
+// import Transition from '@/components/Transition'
 import demo from '@/components/demo'
 import provider from '@/components/provider'
+import Transition from '@/components/transition/transition'
+import TransitionChild from '@/components/transition/transition-child'
 
 Vue.use(Router)
 
@@ -41,8 +43,14 @@ const router = new Router({
   },
   {
     path: '/transition',
-    name: 'Transition',
-    component: Transition
+    name: 'transition',
+    component: Transition,
+    children: [
+      {
+        path: 'child',
+        component: TransitionChild
+      }
+    ]
   },
   {
     path: '/provider',
