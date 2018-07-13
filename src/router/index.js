@@ -4,10 +4,13 @@ import AccessRoot from '@/components/AccessRoot'
 import Directive from '@/components/Directive'
 import SlotScope from '@/components/SlotScope'
 // import Transition from '@/components/Transition'
+import Home from '@/components/home'
 import demo from '@/components/demo'
 import provider from '@/components/provider'
 import Transition from '@/components/transition/transition'
 import TransitionChild from '@/components/transition/transition-child'
+
+import VeeValidate from '@/components/vee-validate/vee-validate'
 
 Vue.use(Router)
 
@@ -15,8 +18,8 @@ const router = new Router({
   mode: 'history',
   routes: [{
     path: '/',
-    name: 'index',
-    component: demo,
+    name: 'Home',
+    component: Home,
     meta: {
       requireAuth: true
     }
@@ -25,6 +28,11 @@ const router = new Router({
     path: '/demo',
     name: 'demo',
     component: demo
+  },
+  {
+    path: '/vee-validate',
+    name: 'VeeValidate',
+    component: VeeValidate
   },
   {
     path: '/access-root',
@@ -43,14 +51,12 @@ const router = new Router({
   },
   {
     path: '/transition',
-    name: 'transition',
+    name: 'Transition',
     component: Transition,
-    children: [
-      {
-        path: 'child',
-        component: TransitionChild
-      }
-    ]
+    children: [{
+      path: 'child',
+      component: TransitionChild
+    }]
   },
   {
     path: '/provider',

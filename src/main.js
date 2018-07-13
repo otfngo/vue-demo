@@ -1,10 +1,13 @@
 import Vue from 'vue'
+import VeeValide from 'vee-validate'
 import App from './App'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import '@/common/style/custom.scss'
 import router from './router'
 import '@/directive/vue-directive.js'
 
+Vue.use(VeeValide)
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
