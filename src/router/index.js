@@ -3,14 +3,13 @@ import Router from 'vue-router'
 import AccessRoot from '@/components/AccessRoot'
 import Directive from '@/components/Directive'
 import SlotScope from '@/components/SlotScope'
-// import Transition from '@/components/Transition'
 import Home from '@/components/home'
 import demo from '@/components/demo'
 import provider from '@/components/provider'
 import Transition from '@/components/transition/transition'
 import TransitionChild from '@/components/transition/transition-child'
-
-import VeeValidate from '@/components/vee-validate/vee-validate'
+import Passive from '@/components/passive/passive'
+import Checkbox from '@/components/checkbox/checkbox'
 
 Vue.use(Router)
 
@@ -30,9 +29,14 @@ const router = new Router({
     component: demo
   },
   {
-    path: '/vee-validate',
-    name: 'VeeValidate',
-    component: VeeValidate
+    path: '/passive',
+    name: 'Passive',
+    component: Passive
+  },
+  {
+    path: '/checkbox',
+    name: 'Checkbox',
+    component: Checkbox
   },
   {
     path: '/access-root',
@@ -62,8 +66,7 @@ const router = new Router({
     path: '/provider',
     name: 'provider',
     component: provider
-  }
-  ]
+  }]
 })
 
 router.beforeEach((to, from, next) => {
