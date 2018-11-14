@@ -9,6 +9,11 @@
     <button @click="handleClick">click</button>
     <button @click="goToAnotherPage">go to another page</button>
     <button @click="handleTransitionClick">transition page</button>
+
+    <pre><code>0.1</code> + <code>0.2</code> = <code>{{ value }}</code></pre>
+    <pre><code>1.0</code> - <code>0.9</code> = <code>{{ $NC.subtract(1.0, 0.9) }}</code></pre>
+
+    <div id="mount-point"></div>
   </div>
 </template>
 
@@ -17,7 +22,8 @@ export default {
   data() {
     return {
       foo: 1,
-      message: 'hello world'
+      message: 'hello world',
+      value: 0
     }
   },
   computed: {
@@ -27,6 +33,9 @@ export default {
         .reverse()
         .join('')
     }
+  },
+  created() {
+    this.value = this.$NC.add(0.1, 0.2)
   },
   beforeRouteEnter(to, from, next) {
     next()

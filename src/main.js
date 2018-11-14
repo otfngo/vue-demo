@@ -4,8 +4,11 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
 import '@/directive/vue-directive.js'
+import NC from 'number-calc'
 
 Vue.use(ElementUI)
+
+Vue.prototype.$NC = NC
 
 Vue.config.productionTip = false
 
