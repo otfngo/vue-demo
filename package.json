@@ -11,9 +11,15 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "element-ui": "^2.4.9",
     "number-calc": "^1.0.6",
     "vue": "^2.5.17",
+=======
+    "element-ui": "^2.4.3",
+    "vee-validate": "^2.1.0-beta.6",
+    "vue": "^2.5.2",
+>>>>>>> b34b538d5847a1d89f302d315319c859486a433f
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
